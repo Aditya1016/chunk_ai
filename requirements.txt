@@ -1,0 +1,18 @@
+# --- Web Framework ---
+fastapi
+uvicorn
+pydantic>=1.10
+
+# --- Embeddings ---
+sentence-transformers==2.2.2
+huggingface_hub==0.10.1
+transformers==4.25.1
+torch>=1.6.0
+# --- Vector DB ---
+chromadb==0.4.13
+
+# --- PDF Parsing (optional) ---
+PyPDF2
+
+# --- Env Vars ---
+python-dotenv

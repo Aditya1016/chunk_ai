@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pdf-api
+    env: docker               # ✅ Tells Render to use your Dockerfile
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /docs   # Optional: Ensures app is up
+    envVars:
+      - key: HUGGINGFACE_API_KEY
+        sync: false          # Securely inject it from the Render dashboard
+      - key: DEBUG
+        value: true
+      - key: EMBEDDING_MODEL
+        value: paraphrase-MiniLM-L6-v2
