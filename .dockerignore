@@ -75,6 +75,18 @@ target/
 .venv/
 venv/
 
+**/sentence_transformers/**
+**/transformers/**
+.cache/
+
+__pycache__/
+*.pyc
+*.pkl
+data/
+*.pdf
+*.json
+
+
 # PyCharm
 .idea
 

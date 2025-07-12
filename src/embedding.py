@@ -20,7 +20,7 @@ else:
         print("[Embedding] No HuggingFace API key provided. Using public access.")
 
 # Model loader
-def get_embedding_model(model_name="paraphrase-MiniLM-L6-v2"):
+def get_embedding_model(model_name="all-MiniLM-L6-v2"):
     if debug:
         print(f"[Embedding] Loading model: sentence-transformers/{model_name}")
     return SentenceTransformer(f"sentence-transformers/{model_name}")
