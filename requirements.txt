@@ -13,9 +13,11 @@ huggingface_hub==0.14.1
 numpy==1.24.4
 nltk
 scikit-learn
+python-multipart
 
 # --- Vector DB ---
 chromadb==0.4.13
+posthog==3.0.1
 
 # --- PDF Parsing (optional) ---
 PyPDF2

@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from vector_store.index_documents import index_pdf_chunks
 from vector_store.query_documents import search_similar_chunks
 import os
+import traceback
 
 router = APIRouter()
 
@@ -14,12 +15,12 @@ class QueryRequest(BaseModel):
 def query_handler(body: QueryRequest):
     try:
         results = search_similar_chunks(body.prompt, top_k=body.top_k)
-
         if "error" in results:
             raise HTTPException(status_code=404, detail=results["error"])
-
         return results
     except Exception as e:
+        print("ERROR in /query:", str(e))
+        traceback.print_exc()  # Full traceback in Docker logs
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/index")
